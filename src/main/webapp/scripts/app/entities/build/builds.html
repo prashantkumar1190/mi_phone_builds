@@ -1,0 +1,72 @@
+<div>
+    <h2 translate="blrpoolApp.build.home.title">Builds</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Query">
+                    </div>
+                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Build</span>
+                    </button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="build.new" has-authority="ROLE_ADMIN" >
+                    <span class="glyphicon glyphicon-flash"></span> <span translate="blrpoolApp.build.home.createLabel">Create a new Build</span>
+                </button>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span translate="global.field.id" ng-hide="true">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="device"><span translate="blrpoolApp.build.device">Device</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="build_type"><span translate="blrpoolApp.build.build_type">Build Type</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="build_path" ng-hide="true"><span translate="blrpoolApp.build.build_path">Build Path</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="build_name"><span translate="blrpoolApp.build.build_name">Build Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="sha1"><span translate="blrpoolApp.build.sha1">sha1</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dt_added"><span translate="blrpoolApp.build.dt_added">Date Added</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="time_added"><span translate="blrpoolApp.build.time_added">Time Added</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th has-authority="ROLE_ADMIN">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="build in builds track by build.id">
+                    <td ng-hide="true"><a ui-sref="build.detail({id:build.id})">{{build.id}}</a></td>
+                    <td>{{build.device}}</td>
+                    <td>{{build.build_type}}</td>
+                    <td ng-hide="true">{{build.build_path}}</td>
+                    <td><a ng-href="{{build.build_path}}">{{build.build_name}}</a></td>
+                    <td>{{build.sha1}}</td>
+                        <td>{{build.dt_added | date:'mediumDate'}}</td>
+                    <td>{{build.time_added | date:'medium'}}</td>
+                    <td has-authority="ROLE_ADMIN">
+                        <button type="submit"
+                                ui-sref="build.detail({id:build.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="build.edit({id:build.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="build.delete({id:build.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>

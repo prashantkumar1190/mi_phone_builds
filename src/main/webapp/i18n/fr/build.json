@@ -1,0 +1,28 @@
+{
+    "blrpoolApp": {
+        "build" : {
+            "home": {
+                "title": "Builds",
+                "createLabel": "Créer un nouveau Build",
+                "createOrEditLabel": "Créer ou éditer un Build"
+            },
+            "created": "Un nouveau Build a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Build avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Build avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Build {{ id }} ?"
+            },
+            "detail": {
+                "title": "Build"
+            },
+            "device": "Device",
+            "build_type": "Build_type",
+            "build_path": "Build_path",
+            "build_name": "Build_name",
+            "sha1": "Sha1",
+            "dt_added": "Dt_added",
+            "time_added": "Time_added"
+        }
+    }
+}
+

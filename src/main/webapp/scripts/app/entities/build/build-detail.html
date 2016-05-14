@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="blrpoolApp.build.detail.title">Build</span> {{build.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th translate="entity.detail.field">Field</th>
+                <th translate="entity.detail.value">Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.device">Device</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.device}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.build_type">Build_type</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.build_type}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.build_path">Build_path</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.build_path}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.build_name">Build_name</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.build_name}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.sha1">Sha1</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.sha1}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.dt_added">Dt_added</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.dt_added | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span translate="blrpoolApp.build.time_added">Time_added</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{build.time_added | date:'medium'}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

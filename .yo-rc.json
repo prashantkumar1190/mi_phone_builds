@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "blrpool",
+    "packageName": "com.blrpool.myapp",
+    "packageFolder": "com/blrpool/myapp",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": true,
+    "enableSocialSignIn": true,
+    "rememberMeKey": "120b75a6fd0e45800d861198fc06435f5ef88205",
+    "testFrameworks": [
+      "protractor"
+    ]
+  }
+}
